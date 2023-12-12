@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+    
+    
+    
+    .header{
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+background-color: white;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color:#cccccc ;
+  z-index: 2;
+}
+
+.leftside{
+  display: flex;
+  align-items: center;
+}
+
+.centre{
+
+flex: 1;
+ display: flex;
+align-items: center;
+margin-left: 65px;
+max-width: 470px;
+}
+
+.rightside{
+  
+  margin-right: 20px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+ margin-left: 60px;
+}
+
+.humberger{
+  height: 25px;
+  margin-left: 23px;
+}
+
+.ytlogo{
+  height: 20px;
+  margin-left: 24px;
+}
+
+.search-icon{
+  height: 25px;
+  padding-left: 15px;}
+
+.search-icon-button{
+  background-color: #f7f7f7;
+  border: 1px solid #cccccc;
+  height: 39px;
+  width: 65px;
+  margin-left: -10px;
+  display: flex;
+  align-items: center;
+
+}
+
+.search-icon-container{
+  position: relative;
+  
+}
+
+.search-icon-button:hover .hover-search{
+  opacity: 0.90;
+}
+
+.hover-search{
+  position: absolute;
+  bottom: -55px;
+  color: white;
+  background-color: rgb(114, 113, 113);
+  font-size: 12px;
+  padding:10px 5px 10px 5px ;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+
+
+
+.search-icon-button:hover{
+  background-color: #f1f0f0;
+
+}
+
+.voice-bar{
+  height: 25px;
+}
+
+.voice-bar-button{
+  background-color: #f7f7f7;
+  border: none;
+  height: 39px;
+  margin-left: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.voice-bar-container{
+  position: relative;
+  width: 50px;
+}
+
+.hover-voicebar{
+  position: absolute;
+  bottom: -70px;
+  left: -35px;
+  color: white;
+  background-color:rgb(114, 113, 113);
+  font-size: 12px;
+  padding:10px 5px 10px 5px ;
+  border-radius: 2px;
+  width: 130px ;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.voice-bar-container:hover .hover-voicebar{
+  opacity: 0.95;
+}
+
+.search-bar{
+
+  flex: 1;
+  padding: 10px 0 10px 11px;
+  font-size: 15px;
+  border: 1px solid #cccccc;
+  box-shadow: inset 0px 1px 2px #eeeeee ;
+  display: flex;
+ width: 0;
+ min-width: 10px;
+}
+
+.upload{
+height: 25px;
+padding-top: 5px;
+}
+
+.upload-container{
+ 
+  position: relative;
+  
+}
+
+.hover-upload{
+  position: absolute;
+  color: white;
+  background-color:rgb(114, 113, 113);
+  font-size: 12px;
+  padding:10px 5px 10px 5px ;
+  border-radius: 2px;
+  left:-10px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.upload-container:hover .hover-upload{
+  opacity: 
+  0.90;
+}
+
+.ytapp{
+  height: 25px;
+  padding-top: 5px;
+}
+
+.ytapp-container{
+  position: relative;
+}
+
+.hover-ytapp{
+  position: absolute;
+  color: white;
+  background-color:rgb(114, 113, 113);
+  font-size: 12px;
+  padding:10px 5px 10px 5px ;
+  border-radius: 2px;
+  bottom: -58px;
+  left:-28px;
+  width: 75px;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.ytapp-container:hover .hover-ytapp{
+  opacity: 0.90;
+}
+
+.notifications{
+  height: 24px;
+  padding-top: 5px;
+}
+
+.emg{
+  position: relative;
+}
+
+
+
+.notification-number{
+  position: absolute;
+  top: -7px;
+  right: -5px;
+ padding: 2px 2px;
+  font-size: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: white;
+  background-color:#cc0000;
+  border-radius: 80px;
+  border: 2px solid white;
+}
+
+.hover-notifications{
+  position: absolute;
+  color: white;
+  background-color:rgb(114, 113, 113);
+  font-size: 12px;
+  padding:10px 5px 10px 5px ;
+  border-radius: 2px;
+  left: -20px;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  opacity: 0;
+  
+}
+
+.emg:hover .hover-notifications{
+  opacity: 0.90;
+}
+
+.my-channel{
+height: 33px;
+border-radius: 24px;
+
+}
+
+.humberger,.ytlogo,.search-icon-button,.voice-bar-button,.upload,.ytapp,.notifications,.my-channel{
+  cursor: pointer;
+}     
+
+
+
+
+
+
+.sidebar{
+  position: fixed;
+  top: 55px;
+  left: 0px;
+  bottom: 0px;
+ z-index: 3;
+  width: 72px;
+  background-color: white;
+}
+
+.sidebar img{
+  height: 24px;
+  margin-top: 15px;
+}
+
+.sidebar div{
+ 
+  height: 73px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.sidebar div:hover{
+  background-color: rgb(237, 235, 235);
+
+}
+
+
+
+.sidebar p{
+  font-size: 10px;
+   margin-top: 5px;
+}
+      
+
+
+
+
+body{
+  font-family: roboto;
+  height: 1000px;
+}
+
+.thumbnail1-container{
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.vedio-min{
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+  background-color: black;
+  color: white;
+  font-size: 12px;
+  padding: 4px;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+
+
+
+.thumbnail1{
+  width: 100%;
+}
+
+.AA{
+  margin-top:56px ;
+  margin-left: 59px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
+  background-color:#f9f9f9;
+  padding-top: 25px;
+  padding-left: 30px;
+  padding-right: 20px;
+  z-index: 1;
+}
+
+.channelpic1{
+  height: 35px;
+  border-radius: 20px;
+}
+
+.vedio-instructions1{
+  display: flex;
+  flex:1 ;
+  margin-top: 10px;
+}
+
+.aa{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.vedio-title1{
+  font-size: 14px;
+  font-weight:500 ;
+  line-height: 20px;
+}
+
+.tas{
+  margin-left: 10px;
+}
+
+.channelname1{
+  font-size: 12px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.vedio-stats1{
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
+
+@media(max-width:870px){
+  .AA{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width:871px)and(min-width:1124px){
+ .AA{
+  grid-template-columns: 1fr 1fr 1fr;
+ }
+}
+
+@media(min-width:1125px){
+  .AA{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+.thumbnail1-container,.channelpic1,.vedio-title1,.channelname1{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="leftside">
+        <img class="humberger" src="hamburger-menu.svg">
+        <img class="ytlogo" src="youtube-logo.svg">
+      </div>
+      <div class="centre">
+        
+        <input class="search-bar" type="text" placeholder="Search">
+        <div class="" search-icon-container>
+         <button class="search-icon-button"> <img class="search-icon" src="search.svg"><p class="hover-search">Search</p></button>
+        </div>
+        <div class="voice-bar-container">
+        <button class="voice-bar-button"><img class="voice-bar" src="voice-search-icon.svg"><p class="hover-voicebar">Search with your voice</p></button>
+      </div>
+        </div>
+      <div class="rightside">
+        <div class="upload-container">
+        <img class="upload" src="voice-search-icon.svg"><p class="hover-upload">Create</p>
+      </div>
+      <div class="ytapp-container">
+        <img class="ytapp" src="youtube-apps.svg"><p class="hover-ytapp">Youtube apps </p>
+      </div>
+      <div class="emg">
+      <div class="notifications-container">
+        <img class="notifications" src="notifications.svg"><p class="notification-number">3</p>
+        <p class="hover-notifications">Notifications</p>
+        </div>
+      </div>
+        <img class="my-channel" src="my-channel.jpeg">
+      </div>
+    </div>
+
+
+
+
+    <div class="sidebar">
+      <div><img src="home.svg">
+      <p>Home</p></div>
+      <div><img src="explore (1).svg"> <p>Explore</p></div>
+      <div><img src="subscriptions.svg"> <p>Subscriptions</p></div>
+      <div><img src="originals.svg"> <p>Originals</p></div>
+      <div><img src="youtube-music.svg"> <p>Youtube Music</p></div>
+      <div><img src="library.svg"> <p>Library</p></div>
+    </div>
+
+
+    
+
+    <div class="AA">
+    <div class="aa">
+       <div class="thumbnail1-container">
+       <img class="thumbnail1"  src="thumbnail-1.webp">
+       <div class="vedio-min">14:20</div>
+       </div>
+       <div class="vedio-instructions1">
+          <div>
+            <img class="channelpic1" src="channel-1.jpeg">
+          </div>
+          <div class="tas">
+            <div class="vedio-title1">
+              Taking Tech and AI with Google CEO Sundar Pichai!
+            </div>
+            <div class="channelname1">
+              Marques Brownlee
+            </div>
+            <div class="vedio-stats1">
+              3.4M views &#183; 6 months ago
+            </div>
+          </div>
+          
+       </div>
+    </div>
+
+
+    <div class="aa">
+      <div class="thumbnail1-container">
+       <img class="thumbnail1"  src="thumbnail-2.webp">
+       <div class="vedio-min">8:22</div>
+      </div>
+      <div class="vedio-instructions1">
+         <div>
+           <img class="channelpic1" src="channel-2.jpeg">
+         </div>
+         <div class="tas">
+           <div class="vedio-title1">
+             
+Try Not To Laugh Challenge #9
+           </div>
+           <div class="channelname1">
+            Markiplier
+           </div>
+           <div class="vedio-stats1">
+            19M views · 4 years ago
+           </div>
+         </div>
+         
+      </div>
+   </div>
+
+
+   <div class="aa">
+    <div class="thumbnail1-container">
+     <img class="thumbnail1"  src="thumbnail-3.webp">
+     <div class="vedio-min">9:13</div>
+    </div>
+    <div class="vedio-instructions1">
+       <div>
+         <img class="channelpic1" src="channel-3.jpeg">
+       </div>
+       <div class="tas">
+         <div class="vedio-title1">
+           
+Crazy Tik Toks Taken Moments Before DISASTER
+         </div>
+         <div class="channelname1">
+          SSSniperWolf
+         </div>
+         <div class="vedio-stats1">
+          12M views · 1 year ago
+         </div>
+       </div>
+       
+    </div>
+ </div>
+ 
+
+ <div class="aa">
+  <div class="thumbnail1-container">
+   <img class="thumbnail1"  src="thumbnail-4.webp">
+   <div class="vedio-min">22:09</div>
+  </div>
+  <div class="vedio-instructions1">
+     <div>
+       <img class="channelpic1" src="channel-4.jpeg">
+     </div>
+     <div class="tas">
+       <div class="vedio-title1">
+        
+The Simplest Math Problem No One Can Solve - Collatz Conjecture
+       </div>
+       <div class="channelname1">
+        Veritasium
+       </div>
+       <div class="vedio-stats1">
+        18M views · 4 months ago
+       </div>
+     </div>
+     
+  </div>
+</div>
+
+
+
+<div class="aa">
+  <div class="thumbnail1-container">
+   <img class="thumbnail1"  src="thumbnail-5.webp">
+   <div class="vedio-min">11:17</div>
+  </div>
+  <div class="vedio-instructions1">
+     <div>
+       <img class="channelpic1" src="channel-5.jpeg">
+     </div>
+     <div class="tas">
+       <div class="vedio-title1">
+        
+       Kadane's Algorithm to Maximum Sum Subarray Problem
+     </div>
+       <div class="channelname1">
+        CS Dojo
+       </div>
+       <div class="vedio-stats1">
+        519K views · 5 years ago
+       </div>
+     </div>
+     
+  </div>
+</div>
+
+
+<div class="aa">
+  <div class="thumbnail1-container">
+   <img class="thumbnail1"  src="thumbnail-6.webp">
+   <div class="vedio-min">19:59</div>
+  </div>
+  <div class="vedio-instructions1">
+     <div>
+       <img class="channelpic1" src="channel-6.jpeg">
+     </div>
+     <div class="tas">
+       <div class="vedio-title1">
+         
+      Anything You Can Fit In The Circle I’ll Pay For
+     </div>
+       <div class="channelname1">
+        MrBeast
+       </div>
+       <div class="vedio-stats1">
+        141M views · 1 year ago
+       </div>
+     </div>
+     
+  </div>
+</div>
+
+
+<div class="aa">
+  <div class="thumbnail1-container">
+   <img class="thumbnail1"  src="thumbnail-7.webp">
+   <div class="vedio-min">10:13</div>
+  </div>
+  <div class="vedio-instructions1">
+     <div>
+       <img class="channelpic1" src="channel-7.jpeg">
+     </div>
+     <div class="tas">
+       <div class="vedio-title1">
+         Why Planes Don't Fly Over Tibet
+       </div>
+       <div class="channelname1">
+        RealLifeLore
+       </div>
+       <div class="vedio-stats1">
+        6.6M views · 1 year ago
+       </div>
+     </div>
+     
+  </div>
+</div>
+
+
+<div class="aa">
+  <div class="thumbnail1-container">
+   <img class="thumbnail1"  src="thumbnail-8.webp">
+   <div class="vedio-min">7:12</div>
+  </div>
+  <div class="vedio-instructions1">
+     <div>
+       <img class="channelpic1" src="channel-8.jpeg">
+     </div>
+     <div class="tas">
+       <div class="vedio-title1">
+         Inside The World's Biggest Passenger Plane
+      </div>
+       <div class="channelname1">
+        Tech Vision
+       </div>
+       <div class="vedio-stats1">
+        3.7M views · 10 months ago
+       </div>
+     </div>
+     
+  </div>
+</div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+  </body>
+</html>
